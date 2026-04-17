@@ -13,7 +13,7 @@ export default function Main() {
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
     }
 
-    function toggleShown() {
+    function toggleRecipeShown() {
         setRecipeShown(prev => !prev)
     }
 
@@ -46,7 +46,7 @@ export default function Main() {
                                 <h3>Ready for a recipe?</h3>
                                 <p>Generate a recipe from your list of ingredients.</p>
                             </div>
-                            <button onClick={toggleShown}>Get a recipe</button>
+                            <button onClick={toggleRecipeShown}>Get a recipe</button>
                         </div>
                     }
                 </section>
