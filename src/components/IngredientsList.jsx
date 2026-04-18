@@ -1,8 +1,12 @@
 export default function IngredientsList(props) {
+    const ingredientsListItems = props.ingredients.map((ingredient) => (
+        <li key={ingredient}>{ingredient}</li>
+    ))
+
     return (
         <section>
             <h2>Ingredients on hand:</h2>
-            <ul className="ingredients-list" aria-live="polite">{props.list}</ul>
+            <ul className="ingredients-list" aria-live="polite">{ingredientsListItems}</ul>
             {
                 // if the ingredients list is more than 3, display the get-recipe-container div
                 props.ingredients.length > 3 &&
@@ -11,7 +15,7 @@ export default function IngredientsList(props) {
                         <h3>Ready for a recipe?</h3>
                         <p>Generate a recipe from your list of ingredients.</p>
                     </div>
-                    <button onClick={props.toggle}>Get a recipe</button>
+                    <button onClick={props.toggleRecipeShown}>Get a recipe</button>
                 </div>
             }
         </section>
