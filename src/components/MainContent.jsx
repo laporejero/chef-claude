@@ -1,10 +1,9 @@
 import React from "react"
 import ClaudeRecipe from "./ClaudeRecipe"
 import IngredientsList from "./IngredientsList"
+import { getRecipeFromAI } from "../ai"
 
 export default function Main() {
-
-    const API_KEY = import.meta.env.VITE_HF_API_KEY
 
     const [ingredients, setIngredients] = React.useState([])
     const [recipeShown, setRecipeShown] = React.useState(false)
