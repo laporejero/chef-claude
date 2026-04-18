@@ -28,7 +28,8 @@ export async function getRecipeFromAI(ingredientsArr) {
         return response.choices[0].message.content
 
     } catch (err) {
-        console.error("Error generating recipe:", err.message)
-        return "Sorry, I couldn't generate a recipe right now."
+        console.error("FULL ERROR", err)
+        return `ERROR: ${err.message}`
+        // return "Sorry, I couldn't generate a recipe right now."
     }
 }
