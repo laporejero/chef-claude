@@ -1,7 +1,7 @@
-export default function ClaudeRecipe({ recipe }) {
+export default function ClaudeRecipe(props) {
     return (
         <section>
-            <p>{recipe}</p>
+            { props.recipe }
         </section>
     )
 }

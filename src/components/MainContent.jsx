@@ -7,10 +7,8 @@ export default function Main() {
 
     console.log(import.meta.env.VITE_HF_API_KEY)
 
-    const [ingredients, setIngredients] = React.useState(
-        ["all the main spices", "pasta", "ground beef", "tomato paste"]
-    )
-    const [recipeShown, setRecipeShown] = React.useState(false)
+    const [ingredients, setIngredients] = React.useState([])
+
     const [recipe, setRecipe] = React.useState("")
 
     function addIngredient(formData) {
@@ -18,10 +16,9 @@ export default function Main() {
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
     }
 
-    async function handleGetRecipe() {
-        const result = await getRecipeFromAI(ingredients)
-        setRecipe(result)
-        setRecipeShown(true)
+    async function getRecipe() {
+        const recipeMarkdown = await getRecipeFromAI(ingredients)
+        setRecipe(recipeMarkdown)
     }
 
     return (
@@ -44,11 +41,11 @@ export default function Main() {
                 ingredients.length > 0 && 
                 <IngredientsList 
                     ingredients={ingredients} 
-                    handleGetRecipe={handleGetRecipe} 
+                    getRecipe={getRecipe} 
                 />
             }
             
-            { recipeShown && <ClaudeRecipe recipe={recipe} /> }
+            { recipe && <ClaudeRecipe recipe={recipe} /> }
 
         </main>
     )
