@@ -1,3 +1,17 @@
+Chef Claude (AI Recipe Generator)
+
+A React-based web application that generates recipes from user-provided ingredients using the Hugging Face AI API. Users can input a list of ingredients, and the app dynamically generates a formatted recipe based on those inputs.
+
+This project was built as part of a Scrimba learning module, where I implemented the application logic, component structure, and API integration while following guided requirements and a provided design.
+
+Tech Stack
+- React (useState, component-based architecture)
+- JavaScript (async/await, state updates)
+- Hugging Face API (AI-generated content)
+- CSS for styling and layout
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
